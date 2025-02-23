@@ -53,11 +53,11 @@ void AFirstController::Move(const FInputActionValue& Value)
         FRotator ControlRot = GetControlRotation();
         FRotator YawRotation(0, ControlRot.Yaw, 0);
 
-        FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-        FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+        FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+        FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 
-        ControlledPawn->AddMovementInput(ForwardDirection, MoveInput.Y);
-        ControlledPawn->AddMovementInput(RightDirection, MoveInput.X);
+        ControlledPawn->AddMovementInput(ForwardDirection, MoveInput.X);
+        ControlledPawn->AddMovementInput(RightDirection, MoveInput.Y);
     }
 }
 
